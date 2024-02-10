@@ -14,4 +14,5 @@ public interface StudentService {
     void removeStudent (Long id);
 
     List<Student> getWhenAgeBetween(Integer min, Integer max);
+
 }
