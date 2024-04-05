@@ -1,6 +1,7 @@
 package ru.hogwarts.school.model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -14,14 +15,14 @@ public class Student {
 
     private int age;
 
-    public  Student (){
-    }
-
     @ManyToOne
     @JoinColumn(name = "faculty_id")
     private Faculty faculty;
 
-    public Student(String name, int age) {
+    public  Student (){
+    }
+
+    public Student( String name, int age, Faculty faculty) {
         this.name = name;
         this.age = age;
         this.faculty = faculty;
