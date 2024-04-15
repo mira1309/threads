@@ -16,4 +16,5 @@ public interface FacultyService {
     void removeFaculty (Long id);
 
     Collection<Faculty> findByColorIgnoreCaseOrNameIgnoreCase (String color, String name);
+
 }

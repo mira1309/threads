@@ -1,5 +1,9 @@
 package ru.hogwarts.school.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.hogwarts.school.model.Faculty;
@@ -50,10 +54,9 @@ public class StudentController {
         return studentService.findStudentsByFacultyId(facultyId);
     }
 
-    //получить факультет по id студента
-    @GetMapping("/faculty-by-student-id")
-    public List<Student> getFacultyByStudentIdOrName(@RequestParam (required = false) Long id,
-                                                     @RequestParam (required = false) String name) {
-        return studentService.findFacultyByStudentIdOrName(id, name);
+
+    @GetMapping("/faculty-by-student-id/{id}")
+    public Faculty getFacultyByStudentId(@PathVariable Long id) {
+        return studentService.getFacultyByStudentId(id);
     }
 }

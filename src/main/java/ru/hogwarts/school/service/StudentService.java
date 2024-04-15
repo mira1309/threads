@@ -20,6 +20,5 @@ public interface StudentService {
 
     //получить студентов факультета
     List<Student> findStudentsByFacultyId(Long facultyId);
-
-    List<Student> findFacultyByStudentIdOrName(Long id, String name);
+    public Faculty getFacultyByStudentId(Long id);
 }
