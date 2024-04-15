@@ -15,9 +15,11 @@ import java.util.List;
 @RequestMapping("/faculty")
 public class FacultyController {
     private final FacultyService facultyService;
+    private final StudentService studentService;
 
-    public FacultyController(FacultyService facultyService) {
+    public FacultyController(FacultyService facultyService, StudentService studentService) {
         this.facultyService = facultyService;
+        this.studentService = studentService;
     }
     @GetMapping("/{id}")
     public Faculty getFaculty(@PathVariable Long id){
@@ -44,6 +46,11 @@ public class FacultyController {
             return ResponseEntity.ok(facultyService.findByColorIgnoreCaseOrNameIgnoreCase(color, name));
         }
         return ResponseEntity.ok(Collections.emptyList());
+    }
+
+    @GetMapping("/faculty-by-student-id/{id}")
+    public Faculty getFacultyByStudentId(@PathVariable Long id) {
+        return studentService.getFacultyByStudentId(id);
     }
 }
 
