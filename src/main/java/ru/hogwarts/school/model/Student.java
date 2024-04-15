@@ -79,7 +79,6 @@ public class Student {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
-                ", faculty=" + faculty +
                 '}';
     }
 }
