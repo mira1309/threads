@@ -22,7 +22,7 @@ public class FacultyController {
         this.studentService = studentService;
     }
     @GetMapping("/{id}")
-    public Faculty getFaculty(@PathVariable Long id){
+    public Faculty  getFaculty(@PathVariable Long id){
         return facultyService.getFaculty(id);
     }
     @PostMapping
