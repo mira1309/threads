@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
-    List<Student> findAllByAgeBetween(Integer min, Integer max);
+    List<Student> findAllByAgeBetween(int min, int max);
 
     List<Student> findStudentsByFacultyId(Long facultyId);
 

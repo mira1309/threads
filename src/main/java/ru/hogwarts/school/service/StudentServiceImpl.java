@@ -39,7 +39,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> findWhenAgeBetween(Integer min, Integer max) {
+    public List<Student> findWhenAgeBetween(int min, int max) {
         return studentRepository.findAllByAgeBetween(min, max);
     }
 
@@ -48,9 +48,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     public Faculty getFacultyByStudentId(Long id) {
-        Student student = studentRepository.findById(id).orElseThrow(
+        /*Student student = studentRepository.findById(id).orElseThrow(
                 () -> new StudentNotFoundException("Student not found with id: " + id));
-        return student.getFaculty();
+        return student.getFaculty();*/
+        return studentRepository.findById(id).orElseThrow(
+                () -> new StudentNotFoundException("Student not found with id: " + id)).getFaculty();
     }
 }
 
