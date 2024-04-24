@@ -20,5 +20,10 @@ public interface StudentService {
 
     //получить студентов факультета
     List<Student> findStudentsByFacultyId(Long facultyId);
-    public Faculty getFacultyByStudentId(Long id);
+    Faculty getFacultyByStudentId(Long id);
+
+    int countOfStudent();
+    double getAvgAge();
+
+    List<Student> getLastFiveOrderByIdDesc();
 }

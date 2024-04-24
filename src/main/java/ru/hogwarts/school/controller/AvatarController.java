@@ -36,8 +36,4 @@ public class AvatarController {
         return avatarService.downloadFromDb(id);
     }
 
-    @GetMapping
-    public List<Avatar> getAll(@RequestParam int page, @RequestParam int size) {
-        return avatarService.getAvatars(page, size);
-    }
 }

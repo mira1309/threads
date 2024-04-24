@@ -54,6 +54,17 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findById(id).orElseThrow(
                 () -> new StudentNotFoundException("Student not found with id: " + id)).getFaculty();
     }
+
+     public int countOfStudent(){
+         return studentRepository.countOfStudent();
+    }
+
+    public double getAvgAge() {
+        return studentRepository.getAvgAge();
+    }
+    public List<Student> getLastFiveOrderByIdDesc(){
+        return studentRepository.getLastFiveOrderByIdDesc();
+    }
 }
 
 
