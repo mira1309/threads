@@ -27,7 +27,7 @@ import static java.nio.file.StandardOpenOption.CREATE_NEW;
 @Service
 public class AvatarServiceImpl implements AvatarService {
 
-    private final Logger logger = LoggerFactory.getLogger(AvatarService.class);
+    private final Logger logger = LoggerFactory.getLogger(AvatarServiceImpl.class);
 
     private final AvatarRepository avatarRepository;
     private final StudentRepository studentRepository;
@@ -87,6 +87,7 @@ public class AvatarServiceImpl implements AvatarService {
     }
 
     public ResponseEntity<byte[]> downloadFromDb(Long id) {
+        logger.info("Was invoked method downloadFromDb");
         Avatar avatar = avatarRepository.findById(id).get();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.parseMediaType(avatar.getMediaType()));
@@ -95,6 +96,7 @@ public class AvatarServiceImpl implements AvatarService {
     }
 
     public List<Avatar> getAvatars(int page, int size) {
+        logger.info("Was invoked method getAvatars");
         Pageable pageable = PageRequest.of(page, size);
         return avatarRepository.findAll(pageable).getContent();
     }
