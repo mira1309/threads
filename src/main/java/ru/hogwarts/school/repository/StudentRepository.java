@@ -15,10 +15,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     Student findStudentById(Long id);
 
- //   Используйте аннотацию @Query и добавьте следующий функционал в проект:
-
- //           - Возможность получить количество всех студентов в школе. Эндпоинт должен вернуть число.
-
     @Query(value="select count(*) from student", nativeQuery = true)
     int countOfStudent();
 
