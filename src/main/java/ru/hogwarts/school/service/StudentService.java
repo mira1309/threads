@@ -17,7 +17,6 @@ public interface StudentService {
 
     List<Student> findWhenAgeBetween(int min, int max);
 
-    //получить студентов факультета
     List<Student> findStudentsByFacultyId(Long facultyId);
     Faculty getFacultyByStudentId(Long id);
 
