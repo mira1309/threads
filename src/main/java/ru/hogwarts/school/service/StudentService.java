@@ -26,4 +26,8 @@ public interface StudentService {
     double getAvgAge();
 
     List<Student> getLastFiveOrderByIdDesc();
+
+    void printStudents();
+
+    void printStudentsSync();
 }

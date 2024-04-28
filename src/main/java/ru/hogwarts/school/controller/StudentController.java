@@ -61,4 +61,14 @@ public class StudentController {
     public List<Student> getLastFiveOrderByIdDesc(){
         return studentService.getLastFiveOrderByIdDesc();
     }
+
+    @GetMapping("/print-parallel")
+    public void printStudents() {
+        studentService.printStudents();
+    }
+
+    @GetMapping("/print-synchronized")
+    public void printStudentsSync() {
+        studentService.printStudentsSync();
+    }
 }
